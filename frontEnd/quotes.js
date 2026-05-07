@@ -4,7 +4,9 @@ function setup() {
   const authorText = document.getElementById("author");
 
   async function getQuoteAPI() {
-    const response = await fetch("http://localhost:3000/");
+    const response = await fetch(
+      "https://m-abdoon-quote-server.hosting.codeyourfuture.io/",
+    );
     const quoteString = await response.json();
 
     return quoteString;
