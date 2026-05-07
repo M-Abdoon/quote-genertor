@@ -5,9 +5,9 @@ function setup() {
 
   async function getQuoteAPI() {
     const response = await fetch("http://localhost:3000/");
-    const quoteString = await response.text();
+    const quoteString = await response.json();
 
-    console.log(`Received quote string: ${quoteString}`);
+    return quoteString;
   }
 
   async function showRandomQuote() {

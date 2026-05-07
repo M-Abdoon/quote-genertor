@@ -25,7 +25,7 @@ function randomQuote() {
 
 app.get("/", (req, res) => {
   const quote = randomQuote();
-  res.send(`"${quote.quote}" -${quote.author}`);
+  res.send(quote);
 });
 
 app.post("/", (req, res) => {
