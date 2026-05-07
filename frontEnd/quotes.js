@@ -1,0 +1,28 @@
+function setup() {
+  const quoteButton = document.getElementById("new-quote");
+  const quoteText = document.getElementById("quote");
+  const authorText = document.getElementById("author");
+
+  async function getQuoteAPI() {
+    const response = await fetch("http://localhost:3000/");
+    const quoteString = await response.text();
+
+    console.log(`Received quote string: ${quoteString}`);
+  }
+
+  async function showRandomQuote() {
+    const fetchedQuote = await getQuoteAPI();
+    quoteText.textContent = `“${fetchedQuote.quote}”`;
+    authorText.textContent = `- ${fetchedQuote.author}`;
+  }
+
+  function pickFromArray(choices) {
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+
+  quoteButton.addEventListener("click", showRandomQuote);
+
+  showRandomQuote();
+}
+
+document.addEventListener("DOMContentLoaded", setup);
