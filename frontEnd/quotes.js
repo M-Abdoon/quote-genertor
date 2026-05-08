@@ -43,7 +43,7 @@ function setup() {
         },
         body: JSON.stringify({ quote: newQuote, author: newAuthor }),
       });
-
+      console.log(response);
       if (response.ok) {
         addQuoteInput.value = "";
         addAuthorInput.value = "";

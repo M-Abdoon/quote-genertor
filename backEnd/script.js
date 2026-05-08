@@ -41,6 +41,16 @@ app.post("/", (req, res) => {
       res.status(400).send("Expected body to be JSON.");
       return;
     }
+
+    if (!body.quote?.trim() || !body.author?.trim()) {
+      res
+        .status(400)
+        .send(
+          "Quote and Author can not be empty. Please provide both quote and author.",
+        );
+      return;
+    }
+
     if (typeof body != "object" || !("quote" in body) || !("author" in body)) {
       console.error(
         `Failed to extract quote and author from post body: ${bodyString}`,
