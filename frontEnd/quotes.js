@@ -1,5 +1,5 @@
-//const serverUrl = "https://m-abdoon-quote-server.hosting.codeyourfuture.io";
-const serverUrl = "http://127.0.0.1:3000";
+const serverUrl = "https://m-abdoon-quote-server.hosting.codeyourfuture.io";
+//const serverUrl = "http://127.0.0.1:3000";
 
 function setup() {
   const quoteButton = document.getElementById("new-quote");
